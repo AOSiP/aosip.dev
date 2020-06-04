@@ -1,6 +1,6 @@
 const BASE_URL = 'https://aosip.dev/'
 const GITHUB_URL = `https://github.com/AOSiP`
-const GERRIT_URL = 'https://review.aosip.dev/q'
+const GERRIT_URL = 'https://review.aosip.dev'
 const DEVICES_URL = 'https://github.com/AOSiP-Devices'
 
 export async function handleRequest(request: Request): Promise<Response> {
@@ -26,7 +26,7 @@ export async function handleRequest(request: Request): Promise<Response> {
       case 1:
         return Response.redirect(GERRIT_URL)
       case 2:
-        return Response.redirect(`${GERRIT_URL}/${URLparts[1]}`)
+        return Response.redirect(`${GERRIT_URL}/q/${URLparts[1]}`)
     }
   } else if (URLparts[0] === 'd') {
     switch (URLparts.length) {
