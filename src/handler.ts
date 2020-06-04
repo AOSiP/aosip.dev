@@ -10,7 +10,7 @@ export async function handleRequest(request: Request): Promise<Response> {
   if (URLparts[0] === 'g') {
     switch (URLparts.length) {
       case 1:
-        return Response.redirect(`${GITHUB_URL}`, 301)
+        return Response.redirect(GITHUB_URL, 301)
       case 2:
         return Response.redirect(
           `${GITHUB_URL}/${URLparts[1]}`,
@@ -32,7 +32,7 @@ export async function handleRequest(request: Request): Promise<Response> {
   } else if (URLparts[0] === 'd') {
     switch (URLparts.length) {
       case 1:
-        return Response.redirect(`${DEVICES_URL}`, 301)
+        return Response.redirect(DEVICES_URL, 301)
       case 2:
         return Response.redirect(
           `${DEVICES_URL}/${URLparts[1]}`,
