@@ -20,8 +20,6 @@ export async function handleRequest(request: Request): Promise<Response> {
           `${GITHUB_URL}/${URLparts[1]}/commit/${URLparts[2]}`,
           301,
         )
-      default:
-        break
     }
   } else if (URLparts[0] === 'r') {
     switch (URLparts.length) {
@@ -44,8 +42,6 @@ export async function handleRequest(request: Request): Promise<Response> {
           `${GITHUB_URL}/${URLparts[1]}/commit/${URLparts[2]}`,
           301,
         )
-      default:
-        break
     }
   }
   return fetch(request)
