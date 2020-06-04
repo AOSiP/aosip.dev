@@ -40,7 +40,7 @@ export async function handleRequest(request: Request): Promise<Response> {
         )
       case 3:
         return Response.redirect(
-          `${GITHUB_URL}/${URLparts[1]}/commit/${URLparts[2]}`,
+          `${DEVICES_URL}/${URLparts[1]}/commit/${URLparts[2]}`,
           301,
         )
     }
