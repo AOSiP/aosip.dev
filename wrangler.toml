@@ -1,0 +1,4 @@
+name = "aosip"
+type = "webpack"
+route = "https://aosip.dev/*"
+webpack_config = "webpack.config.js"
