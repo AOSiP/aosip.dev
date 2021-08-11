@@ -4,7 +4,7 @@ const GERRIT_URL = 'https://review.aosip.dev'
 const DEVICES_URL = 'https://github.com/AOSiP-Devices'
 const JENKINS_URL = 'https://jenkins.aosip.dev'
 const CHANGELOG_URL = 'https://raw.githubusercontent.com/AOSiP-Devices/Updater-Stuff/master'
-
+const DOWNLOADS_URL = 'https://get.aosip.dev'
 
 export async function handleRequest(request: Request): Promise<Response> {
   const relURL = request.url.replace(BASE_URL, '')
@@ -12,6 +12,9 @@ export async function handleRequest(request: Request): Promise<Response> {
 
   // Check the route that is being accessed
   switch (URLparts[0]) {
+    case 'dl': {
+      return Response.redirect(`${DOWNLOADS_URL}/${relURL.replace('dl/', '')}`, 301)
+    }
     case 'changelog': {
       let response = await fetch(`${CHANGELOG_URL}/changelog`)
       if (response.status != 200) {
